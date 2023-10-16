@@ -13,7 +13,7 @@ print('Read line: ', file_line)
 
 # Use the string 'split' function to convert
 # the comma-separated string into a list of items
-device_info = file_line.split(',')
+device_info_list = file_line.split(',')
 
 # Now put those items from the list into our dictionary
 device_info['name'] = device_info_list[0]
