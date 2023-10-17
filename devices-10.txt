@@ -1,0 +1,8 @@
+d01-is,ios,192.168.122.1,cisco,cisco
+d02-is,ios,192.168.122.2,cisco,cisco
+d03-nx,nx-os,192.168.122.3,cisco,cisco
+d04-nx,nx-os,192.168.122.4,cisco,cisco
+d05-xr,ios-xr,192.168.122.5,cisco,cisco
+d06-xr,ios-xr,192.168.122.6,cisco,cisco
+d07-xe,ios-xe,192.168.122.7,cisco,cisco
+d08-xe,ios-xe,192.168.122.8,cisco,cisco

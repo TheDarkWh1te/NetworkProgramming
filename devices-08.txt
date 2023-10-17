@@ -1,0 +1,8 @@
+d01-is,ios,192.168.122.1,Version 5.3.1
+d02-is,ios,192.168.122.2,Version 4.22.18
+d03-nx,nx-os,192.168.122.3,Version 5.3.1
+d04-nx,nx-os,192.168.122.4,Version 5.3.1
+d05-xr,ios-xr,192.168.122.5,Version 4.16.9
+d06-xr,ios-xr,192.168.122.6,Version 5.3.0
+d07-xe,ios-xe,192.168.122.7,Version 4.16.0
+d08-xe,ios-xe,192.168.122.8,Version 5.3.0

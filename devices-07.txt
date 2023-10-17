@@ -1,0 +1,8 @@
+d01-is,ios,Mgmt:192.168.122.1,Version 5.3.1,cisco,cisco
+d02-is,ios,Mgmt:192.168.122.2,Version 4.22.18,cisco,cisco
+d03-nx,nx-os,Mgmt:192.168.122.3,Version 5.3.1,cisco,cisco
+d04-nx,nx-os,Mgmt:192.168.122.4,Version 5.3.1,cisco,cisco
+d05-xr,ios-xr,Mgmt:192.168.122.6,Version 4.16.9,cisco,cisco
+d06-xr,ios-xr,Mgmt:192.168.122.6,Version 5.3.0,cisco,cisco
+d07-xe,ios-xe,Mgmt:192.168.122.7,Version 4.16.0,cisco,cisco
+d08-xe,ios-xe,Mgmt:192.168.122.8,Version 5.3.0,cisco,cisco

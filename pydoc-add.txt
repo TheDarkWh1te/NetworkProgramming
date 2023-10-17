@@ -1,0 +1,61 @@
+DESCRIPTION
+--------------------------------------------------------------------------
+
+
+'''
+Example of a script that executes a CLI command on a remote device over established SSH connection.
+Administrator login options and CLI commands are device specific, thus this script needs to be adapted to a concrete device specifics.
+    Current script assumes interaction with Cisco IOS device.
+NOTES: Requires installation of the 'paramiko' Python package using: pip install paramiko
+    The 'paramiko' package is documented at: http://docs.paramiko.org
+    Complete set of SSH client operations is available at: http://docs.paramiko.org/en/1.15/api/client.html
+
+pydoc-example.py
+'''
+
+
+
+
+--------------------------------------------------------------------------
+FUNCTIONS
+--------------------------------------------------------------------------
+
+
+CONNECT
+--------------------------------------------------------------------------
+    '''
+    Connects to device using pexpect.
+    :ip_address: The IP address of the device we are connecting to
+    :username: The username that we should use when logging in
+    :password: The password that we should use when logging in
+    =return: pexpect session object if successful, 0 otherwise
+    '''
+
+
+ENABLE_MODE
+--------------------------------------------------------------------------
+    '''
+    Changes the device to privilged exec mode.
+    :session: The pexpect session object that we are using
+    =return: Print message if successful, 0 otherwise
+    '''
+
+
+CONFIG_MODE
+--------------------------------------------------------------------------
+    """
+    Runs 'configure terminal' command on device and returns output from device in a string.
+    :session: The pexpect session for communication with device
+    =return: Print message if successful, 0 otherwise
+    """
+
+
+NEW_CONFIGURATION
+--------------------------------------------------------------------------
+    '''
+    Changes the device configuration.
+    :session: The pexpect session object that we are using
+    :configure: The command used from the config list
+    =return: Print message if successful, 0 otherwise
+    '''
+
