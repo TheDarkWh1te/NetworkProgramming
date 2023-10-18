@@ -91,6 +91,7 @@ def Telnetfunc(): #Function used for telnetting to the network device
     # Terminate telnet to device and close session
     TelnetSession.sendline('quit')
     TelnetSession.close()
+    quit() #Quit program to prevent looping
 #_________________________________SSH______________________________________#
 def SSHfunc():
     print('SSH')
