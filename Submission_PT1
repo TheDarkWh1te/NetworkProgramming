@@ -3,7 +3,7 @@ import pexpect
 # Define variables
 #varibles given from EVE-NG Basic Configuration change if needs be for submission
 #NOTE: these varibles are hardcoded for now, move to a file and extract the data into a list to use from there 
-ip_address = '192.168.1.1'
+ip_address = '192.168.56.101'
 username = 'cisco'
 password = 'cisco'
 EnablePassword = 'class'
@@ -86,43 +86,40 @@ def Telnetfunc(): #Function used for telnetting to the network device
 
     #Next part of the task, set a new hostname
     #Turn hostname into to func 
-    print('\nPlease enter the name of the Device')
-    Hostname = input('Name:') #user inputs a new hostname, save as a varible for sendline later
+    
 
     TelnetSession.sendline('conf t') #send conf t(congiure terminal) to the terminal to enter global configuation
-    TelnetResult=TelnetSession.expect(['(config)#', pexpect.TIMEOUT])#Expect to see '(config)#' after sending the conf t comand to the terminal
+    TelnetResult=TelnetSession.expect(['\(config\)#', pexpect.TIMEOUT])#Expect to see '(config)#' after sending the conf t comand to the terminal use .\\ arounf conf
     #Config error check
     if TelnetResult == 0:
         print('--- Entering Config mode')
+        
         pass
     else:
         print('--- Entering config uncuccsessful')
         exit()
 
-
-    TelnetSession.sendline('hostname',Hostname) #send the hostname command with the hostname varible to set the new name
-    TelnetResult=TelnetSession.expect([Hostname+'(config)#', pexpect.TIMEOUT])#Expect to see the new 'hostname(config)#' after its been set
+    print('\nPlease enter the name of the Device')
+    Hostname = input('Name:') #user inputs a new hostname, save as a varible for sendline later
+    TelnetSession.sendline(f'hostname {Hostname}') #send the hostname command with the hostname varible to set the new name, note the sting has to be set this way as sendline() only take 1 positinal argument
+    print(Hostname+'(config)#')
+    TelnetResult=TelnetSession.expect([Hostname+'\(config\)#', pexpect.TIMEOUT])#Expect to see the new 'hostname(config)#' after its been set
 
     #host name error check 
     if TelnetResult == 0:
         print('--- Name change Succsesful')
+        TelnetSession.sendline('exit') # exit global configuration after hostname change (for future proofing incase adding more functions)
         pass
     else:
         print('--- Hostname error could not set',Hostname)
         exit()
+     
     
-    TelnetSession.sendline('exit')
-
-
-
-
-
-
-
-
     # Terminate telnet to device and close session
     TelnetSession.sendline('quit')
     TelnetSession.close()
+    exit() # quit program to close the loop
+    
 #_________________________________SSH______________________________________#
 def SSHfunc():
     print('SSH')
