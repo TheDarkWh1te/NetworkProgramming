@@ -90,5 +90,13 @@ for route in routes_list:
             # and add it to the list
             route = {'prefix': prefix, 'next-hop': next_hop}
             intf_routes[intf].append(route)
+# Display a blank line to make easier to read
+print('')
+# Display a title
+print('OSPF routes out of GigabitEthernet interfaces:')
+# Display the GigabitEthernet interfaces routes
+pprint(intf_routes)
+# Display a blank line to make easier to read
+print('')
 # Close the file
 file.close()
